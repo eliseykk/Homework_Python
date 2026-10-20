@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+result.txt
+expensive.csv
+new_text.json
+log.txt
+loggingtask18.log
+statstask18.json

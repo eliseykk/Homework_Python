@@ -1,0 +1,6 @@
+2026-09-23 10:15:32 INFO User 123 logged in
+2026-09-23 10:16:01 ERROR User 456 authentication failed
+2026-09-23 10:17:43 WARNING User 123 changed password
+2026-09-23 10:18:01 ERROR User 789 authentication failed
+2026-09-23 10:19:00 INFO User 456 logged in
+2026-09-23 10:20:00 INFO User 123 opened ERROR help page
