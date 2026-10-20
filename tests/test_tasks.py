@@ -30,12 +30,12 @@ class TasksTests(unittest.TestCase):
     def run_task(self, number, answers=()):
         output = StringIO()
         with contextlib.redirect_stdout(output), patch("builtins.input", side_effect=answers):
-            data = runpy.run_path(str(self.folder / f"task{number}.py"))
+            data = runpy.run_path(str(self.folder / f"task{number}_seminar4.py"))
         return data, output.getvalue()
 
     def run_process(self, number, answers=""):
         result = subprocess.run(
-            [sys.executable, f"task{number}.py"], input=answers,
+            [sys.executable, f"task{number}_seminar4.py"], input=answers,
             text=True, encoding="utf-8", capture_output=True, timeout=10,
             env={**os.environ, "PYTHONIOENCODING": "utf-8"},
         )
@@ -301,7 +301,7 @@ class TasksTests(unittest.TestCase):
         self.assertEqual(output.splitlines(), ["Это строка с большим количеством пробелов.", "Текст с пробелами"])
 
     def test_whole_product_identifier(self):
-        path = Path("task24.py")
+        path = Path("task24_seminar4.py")
         source = path.read_text(encoding="utf-8")
         path.write_text(source.replace('"PRD-54321"', '"PRD-54321", "xPRD-12345", "PRD-123456", "PRD-12345x"'), encoding="utf-8")
         data, _ = self.run_task(24)
